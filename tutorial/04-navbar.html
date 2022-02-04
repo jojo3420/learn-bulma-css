@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar has-shadow is-white">
+    <div class="navbar-brand">
+        <a href="#" class="navbar-item">
+            <img src="assets/logo.png" alt="site logo" style="max-height:70px"/>
+        </a>
+        <a class="navbar-burger" id="nav-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+    <div class="navbar-menu" id="nav-links">
+        <div class="navbar-end">
+            <a href="#" class="navbar-item">My Account</a>
+            <a href="#" class="navbar-item">Shopping Cart(0)</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const navBurger = document.querySelector('#nav-burger')
+    const navLinks = document.querySelector('#nav-links')
+    navBurger.addEventListener('click', () => {
+        navLinks.classList.toggle('is-active')
+    })
+</script>
+</body>
+</html>
