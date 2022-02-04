@@ -62,33 +62,70 @@
     </div>
 </section>
 <section class="section">
-    <div class="contaier">
+    <div class="container">
         <div class="columns is-6 is-variable">
             <div class="column is-7-tablet">
-                <h4 class="is-size-4">Delivery</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequatur dicta et illum
-                    incidunt,
-                    nihil nisi omnis reprehenderit sed temporibus? Alias dolores ea facere officiis rem sequi tempora
-                    velit.
-                    Numquam.
-                </p>
+                <div class="tabs is-boxed">
+                    <ul>
+                        <li class="is-active"><a data-tabname="product">Product</a></li>
+                        <li><a data-tabname="detail">Detail</a></li>
+                    </ul>
+                </div>
+                <article class="px-2 mt-4" id="tab-content">
+                    <div id="content-product">
+                        <h4 class="subtitle is-size-4">Product</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, esse.</p>
+                    </div>
+                    <div id="content-detail" class="is-hidden">
+                        <h4 class="subtitle is-4">Detail</h4>
+                        <p><span class="20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem laborum laudantium mollitia necessitatibus nulla, quod reprehenderit. Aut delectus et facilis ipsam maxime minus molestiae odit ut velit? Dolorem, molestias reiciendis!</span>
+                        </p>
+                    </div>
+                </article>
             </div>
             <div class="column is-5-tablet">
-                <h5 class="is-size-5">Alert</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, cum.</p>
-            </div>
+                <article class="message is-warning">
+                    <div class="message-header">
+                        <p>Alert</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad error labore, nesciunt nihil non pariatur velit veritatis! Laboriosam officia, tenetur!
+                        <div class="mt-2 has-text-centered">
+                            <button class="button is-primary">Add Cart</button>
+                        </div>
+                    </div>
 
+                </article>
+            </div>
         </div>
     </div>
 </section>
 
 
 <script>
+    // menu navi bugger show / hidden
     const navBurger = document.querySelector('#nav-burger')
     const navLinks = document.querySelector('#nav-links')
     navBurger.addEventListener('click', () => {
         navLinks.classList.toggle('is-active')
     })
+</script>
+<script>
+    // Tab show/hidden toggle
+    const tabItems = document.querySelectorAll('div.tabs li')
+    const contents = document.querySelectorAll('article#tab-content > div')
+    tabItems.forEach(liEl => liEl.addEventListener('click', e => {
+        tabItems.forEach(li => li.classList.remove('is-active'))
+        e.target.parentElement.classList.add('is-active')
+        contents.forEach(el => {
+            console.log(el)
+            el.classList.add('is-hidden')
+        })
+        const tabName = e.target.dataset.tabname
+        const content = document.querySelector(`article div#content-${tabName}`)
+        content.classList.remove('is-hidden')
+    }))
 </script>
 </body>
 </html>
