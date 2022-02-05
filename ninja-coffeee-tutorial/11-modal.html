@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">-->
+    <link rel="stylesheet" href="../src/css/bulma.min.css">
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <h2>Modal</h2>
+        <button class="button">open modal</button>
+    </div>
+</section>
+
+<div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="box">
+            <div class="has-text-right">
+                <button class="delete" aria-label="close"/>
+            </div>
+            <h5 class="subtitle is-3">Hello</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim illo libero nihil odit, quae
+                voluptatibus! Beatae, illo soluta? Ratione!</p>
+        </div>
+    </div>
+    <!--    <button class="modal-close is-large" aria-label="modal-close"/>-->
+</div>
+
+<section class="section">
+    <div class="container">
+        <button class="button is-primary" id="modal-button">modal-button2</button>
+    </div>
+</section>
+<div class="modal" id="modal2">
+    <div class="modal-background" id="modal-background"></div>
+    <div class="modal-content has-background-white pb-3">
+        <h3 class="title px-3 py-3">Join the Club</h3>
+        <p class="px-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, minus.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, minus.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, minus.
+        </p>
+    </div>
+</div>
+
+
+<script>
+    const button = document.querySelector('div.container button')
+    const closeButton = document.querySelector('div.modal button')
+    const button2 = document.querySelector('button#modal-button')
+    const modalBackground = document.querySelector('.modal div#modal-background')
+    const modal = document.querySelector('div.modal')
+    const modal2 = document.querySelector('div#modal2')
+    button.onclick = () => {
+        modal.classList.add('is-active')
+    }
+    closeButton.onclick = () => {
+        modal.classList.remove('is-active')
+    }
+
+    button2.addEventListener('click', () => {
+        modal2.classList.add('is-active')
+    })
+    modalBackground.addEventListener('click', () => {
+        modal2.classList.remove('is-active')
+    })
+
+
+</script>
+</body>
+</html>

@@ -96,7 +96,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad error labore, nesciunt nihil non
                         pariatur velit veritatis! Laboriosam officia, tenetur!
                         <div class="mt-2 has-text-centered">
-                            <button class="button">Sign Up</button>
+                            <button class="button" id="signup">Sign Up</button>
                         </div>
                     </div>
                 </article>
@@ -163,6 +163,21 @@
 </section>
 
 
+<!-- modal -->
+<div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="box">
+            <button class="modal-close" aria-label="close"></button>
+            <h4 class="subtitle is-size-4">Join</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at beatae, blanditiis corporis cumque
+                distinctio, minima odit placeat possimus quae qui quis! Amet cupiditate delectus doloremque incidunt
+                minus obcaecati quibusdam?</p>
+        </div>
+    </div>
+</div>
+
+
 <script>
     // menu navi bugger show / hidden
     const navBurger = document.querySelector('#nav-burger')
@@ -186,6 +201,28 @@
         const content = document.querySelector(`article div#content-${tabName}`)
         content.classList.remove('is-hidden')
     }))
+</script>
+<script>
+    // modal visible event
+    const signupButton = document.querySelector('button#signup')
+    const modal = document.querySelector('div.modal')
+    const modalBackground = document.querySelector('div.modal div.modal-background')
+    const modalCloseBtn = document.querySelector('div.modal button.modal-close')
+    signupButton.addEventListener('click', () => {
+        if (modal) {
+            modal.classList.add('is-active')
+        }
+    })
+    modalBackground.addEventListener('click', () => {
+        if (modal)
+            modal.classList.remove('is-active')
+    })
+    modalCloseBtn.addEventListener('click', () => {
+        if (modal)
+            modal.classList.remove('is-active')
+    })
+
+
 </script>
 </body>
 </html>
