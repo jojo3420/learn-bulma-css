@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Filed</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <form>
+            <h2 class="title is-size-2">Login</h2>
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input type="email" class="input" placeholder="Email"/>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input type="password" class="input" placeholder="Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-key"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="has-text-centered">
+                <button type="submit" class="button is-primary">Login</button>
+            </div>
+        </form>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <form>
+            <h2 class="title is-size-2">
+                Sign Up
+            </h2>
+            <div class="field">
+                <label class="label">UserName</label>
+                <div class="control has-icons-left">
+                    <input type="text" class="input" placeholder="UserName" required/>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left">
+                    <input type="email" class="input" placeholder="Email" required />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control has-icons-left">
+                    <input type="password" class="input" placeholder="Password" required>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Gender</label>
+                <div class="control">
+                    <div class="select">
+                        <select>
+                            <option value="M">Male</option>
+                            <option value="F" selected>Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox"/>
+                        회원 가입 <a href="#">약관</a> 동의 합니다.
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" name="question"/>
+                        Yes
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="question"/>
+                        No
+                    </label>
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button type="submit" class="button is-link">SignUp</button>
+                </div>
+                <div class="control">
+                    <button type="reset" class="button is-link is-light">Reset</button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</section>
+
+</body>
+</html>

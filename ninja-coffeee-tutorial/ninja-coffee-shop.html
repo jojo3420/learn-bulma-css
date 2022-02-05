@@ -96,7 +96,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad error labore, nesciunt nihil non
                         pariatur velit veritatis! Laboriosam officia, tenetur!
                         <div class="mt-2 has-text-centered">
-                            <button class="button" id="signup">Sign Up</button>
+                            <button class="button" id="login">Login</button>
                         </div>
                     </div>
                 </article>
@@ -168,11 +168,35 @@
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
-            <button class="modal-close" aria-label="close"></button>
-            <h4 class="subtitle is-size-4">Join</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at beatae, blanditiis corporis cumque
-                distinctio, minima odit placeat possimus quae qui quis! Amet cupiditate delectus doloremque incidunt
-                minus obcaecati quibusdam?</p>
+            <div class="has-text-right">
+                <button class="delete" aria-label="close"></button>
+            </div>
+<!--            <button class="modal-close" aria-label="close"></button>-->
+            <h4 class="subtitle is-size-4">Login</h4>
+            <form action="#">
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left">
+                        <input type="email" class="input" placeholder="Email" required/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control has-icons-left">
+                        <input type="password" class="input" placeholder="Password" required/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field mt-5 ml-1">
+                    <button type="submit" class="button is-info">Login</button>
+                </div>
+            </form>
+
         </div>
     </div>
 </div>
@@ -204,11 +228,11 @@
 </script>
 <script>
     // modal visible event
-    const signupButton = document.querySelector('button#signup')
+    const loginBtn = document.querySelector('button#login')
     const modal = document.querySelector('div.modal')
     const modalBackground = document.querySelector('div.modal div.modal-background')
-    const modalCloseBtn = document.querySelector('div.modal button.modal-close')
-    signupButton.addEventListener('click', () => {
+    const modalCloseBtn = document.querySelector('div.modal button')
+    loginBtn.addEventListener('click', () => {
         if (modal) {
             modal.classList.add('is-active')
         }
